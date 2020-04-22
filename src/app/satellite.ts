@@ -4,13 +4,12 @@ export class Satellite {
     type: string;
     operational: boolean;
     launchDate: string;
-}
 
-function OrbitReport (name, orbitType, type, operational, launchDate) {
-    this.name: string = name; 
-    this.type: string = type; 
-    this.launchDate: string; 
-    this.orbitType: string; 
-    this.operational: boolean)
+constructor(name:string, type:string, launchDate:string, orbitType:string, operational:boolean) {
+    this.name = name; 
+    this.type = type;
+    this.launchDate = launchDate;
+    this.orbitType = orbitType;        
+    this.operational = operational;    
 }
-
+}
