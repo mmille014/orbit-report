@@ -15,27 +15,22 @@ export class AppComponent {
     let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
  
     window.fetch(satellitesUrl).then(function(response) {
-       response.json().then(function(data) {
- 
-         //  let fetchedSatellites = data.satellites;
-         //  // TODO: loop over satellites// 
-         //  fetch("https://handlers.education.launchcode.org/static/satellites.json").then(function(response) {
-         //  console.log(response);
-         //  });
+       response.json().then(function(data) { 
+        let fetchedSatellites = data.satellites;
 
-         //  // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);//
-         //  let fetchedSatellites = data.satellites;
-         //  for (let i=0; i < fetchedSatellites.length; i++) {
-         //  let Satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
-         //  this.SourceList.push(Satellite);
-         //  };
-
-          // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);//
- 
+        for (let i=0; i < fetchedSatellites.length; i++) {
+        let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+        this.sourceList.push(satellite);
+        }; 
        }.bind(this));
     }.bind(this));
  
  }
+
+
+
+
+
 
 //   constructor() {
 //     this.sourceList = [
